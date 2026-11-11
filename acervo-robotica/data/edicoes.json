@@ -1,0 +1,396 @@
+{
+ "versao_contrato": "1.0",
+ "edicoes": [
+  {
+   "id": "joinville-robotica-2021",
+   "ano": 2021,
+   "edicao": "1ª Edição",
+   "status": "rascunho",
+   "ficticio": true,
+   "escolas": 8,
+   "equipes": 12,
+   "estudantes": 40,
+   "resumo": "Rascunho ainda não conferido com a fonte oficial.",
+   "categorias": [
+    {
+     "nome": "Categoria 1",
+     "campea": "Equipe Faísca",
+     "escola": "Escola 01"
+    },
+    {
+     "nome": "Categoria 2",
+     "campea": "Equipe Engrenagem",
+     "escola": "Escola 04"
+    },
+    {
+     "nome": "Categoria 3",
+     "campea": "Equipe Pulso",
+     "escola": "Escola 07"
+    },
+    {
+     "nome": "Categoria 4",
+     "campea": "Equipe Órbita",
+     "escola": "Escola 10"
+    },
+    {
+     "nome": "Categoria 5",
+     "campea": "Equipe Circuito",
+     "escola": "Escola 13"
+    },
+    {
+     "nome": "Categoria 6",
+     "campea": "Equipe Vórtice",
+     "escola": "Escola 16"
+    },
+    {
+     "nome": "Categoria 7",
+     "campea": "Equipe Pixel",
+     "escola": "Escola 19"
+    }
+   ],
+   "projetos": [
+    {
+     "titulo": "Robô seguidor de linha com sensores duplos",
+     "equipe": "Equipe Faísca"
+    },
+    {
+     "titulo": "Braço robótico para triagem de peças",
+     "equipe": "Equipe Engrenagem"
+    }
+   ],
+   "fonte": {
+    "origem": "Acervo interno da Secretaria de Educação (dado fictício de demonstração)",
+    "validado_por": "Comunicação da Secretaria (exemplo)",
+    "validado_em": "2026-11-10"
+   },
+   "historico_correcoes": []
+  },
+  {
+   "id": "joinville-robotica-2022",
+   "ano": 2022,
+   "edicao": "2ª Edição",
+   "status": "validado",
+   "ficticio": true,
+   "escolas": 12,
+   "equipes": 20,
+   "estudantes": 70,
+   "resumo": "Validada internamente, aguardando autorização para publicação.",
+   "categorias": [
+    {
+     "nome": "Categoria 1",
+     "campea": "Equipe Engrenagem",
+     "escola": "Escola 06"
+    },
+    {
+     "nome": "Categoria 2",
+     "campea": "Equipe Pulso",
+     "escola": "Escola 09"
+    },
+    {
+     "nome": "Categoria 3",
+     "campea": "Equipe Órbita",
+     "escola": "Escola 12"
+    },
+    {
+     "nome": "Categoria 4",
+     "campea": "Equipe Circuito",
+     "escola": "Escola 15"
+    },
+    {
+     "nome": "Categoria 5",
+     "campea": "Equipe Vórtice",
+     "escola": "Escola 18"
+    },
+    {
+     "nome": "Categoria 6",
+     "campea": "Equipe Pixel",
+     "escola": "Escola 21"
+    },
+    {
+     "nome": "Categoria 7",
+     "campea": "Equipe Faísca",
+     "escola": "Escola 24"
+    }
+   ],
+   "projetos": [
+    {
+     "titulo": "Braço robótico para triagem de peças",
+     "equipe": "Equipe Engrenagem"
+    },
+    {
+     "titulo": "Robô de resgate com mapeamento simples",
+     "equipe": "Equipe Pulso"
+    }
+   ],
+   "fonte": {
+    "origem": "Acervo interno da Secretaria de Educação (dado fictício de demonstração)",
+    "validado_por": "Comunicação da Secretaria (exemplo)",
+    "validado_em": "2026-11-10"
+   },
+   "historico_correcoes": []
+  },
+  {
+   "id": "joinville-robotica-2023",
+   "ano": 2023,
+   "edicao": "3ª Edição",
+   "status": "publicado",
+   "ficticio": true,
+   "escolas": 18,
+   "equipes": 31,
+   "estudantes": 105,
+   "resumo": "Primeira edição com todas as categorias de competição consolidadas.",
+   "categorias": [
+    {
+     "nome": "Categoria 1",
+     "campea": "Equipe Pulso",
+     "escola": "Escola 11"
+    },
+    {
+     "nome": "Categoria 2",
+     "campea": "Equipe Órbita",
+     "escola": "Escola 14"
+    },
+    {
+     "nome": "Categoria 3",
+     "campea": "Equipe Circuito",
+     "escola": "Escola 17"
+    },
+    {
+     "nome": "Categoria 4",
+     "campea": "Equipe Vórtice",
+     "escola": "Escola 20"
+    },
+    {
+     "nome": "Categoria 5",
+     "campea": "Equipe Pixel",
+     "escola": "Escola 23"
+    },
+    {
+     "nome": "Categoria 6",
+     "campea": "Equipe Faísca",
+     "escola": "Escola 26"
+    },
+    {
+     "nome": "Categoria 7",
+     "campea": "Equipe Engrenagem",
+     "escola": "Escola 29"
+    }
+   ],
+   "projetos": [
+    {
+     "titulo": "Robô de resgate com mapeamento simples",
+     "equipe": "Equipe Pulso"
+    },
+    {
+     "titulo": "Sistema de irrigação automatizada",
+     "equipe": "Equipe Órbita"
+    }
+   ],
+   "fonte": {
+    "origem": "Acervo interno da Secretaria de Educação (dado fictício de demonstração)",
+    "validado_por": "Comunicação da Secretaria (exemplo)",
+    "validado_em": "2026-11-10"
+   },
+   "historico_correcoes": []
+  },
+  {
+   "id": "joinville-robotica-2024",
+   "ano": 2024,
+   "edicao": "4ª Edição",
+   "status": "publicado",
+   "ficticio": true,
+   "escolas": 22,
+   "equipes": 40,
+   "estudantes": 140,
+   "resumo": "Expansão do campeonato para toda a Rede Municipal de Ensino.",
+   "categorias": [
+    {
+     "nome": "Categoria 1",
+     "campea": "Equipe Órbita",
+     "escola": "Escola 16"
+    },
+    {
+     "nome": "Categoria 2",
+     "campea": "Equipe Circuito",
+     "escola": "Escola 19"
+    },
+    {
+     "nome": "Categoria 3",
+     "campea": "Equipe Vórtice",
+     "escola": "Escola 22"
+    },
+    {
+     "nome": "Categoria 4",
+     "campea": "Equipe Pixel",
+     "escola": "Escola 25"
+    },
+    {
+     "nome": "Categoria 5",
+     "campea": "Equipe Faísca",
+     "escola": "Escola 28"
+    },
+    {
+     "nome": "Categoria 6",
+     "campea": "Equipe Engrenagem",
+     "escola": "Escola 31"
+    },
+    {
+     "nome": "Categoria 7",
+     "campea": "Equipe Pulso",
+     "escola": "Escola 34"
+    }
+   ],
+   "projetos": [
+    {
+     "titulo": "Sistema de irrigação automatizada",
+     "equipe": "Equipe Órbita"
+    },
+    {
+     "titulo": "Robô sumô com estratégia adaptativa",
+     "equipe": "Equipe Circuito"
+    }
+   ],
+   "fonte": {
+    "origem": "Acervo interno da Secretaria de Educação (dado fictício de demonstração)",
+    "validado_por": "Comunicação da Secretaria (exemplo)",
+    "validado_em": "2026-11-10"
+   },
+   "historico_correcoes": []
+  },
+  {
+   "id": "joinville-robotica-2025",
+   "ano": 2025,
+   "edicao": "5ª Edição",
+   "status": "publicado",
+   "ficticio": true,
+   "escolas": 28,
+   "equipes": 52,
+   "estudantes": 190,
+   "resumo": "Consolidação das categorias e crescimento da participação das escolas.",
+   "categorias": [
+    {
+     "nome": "Categoria 1",
+     "campea": "Equipe Circuito",
+     "escola": "Escola 21"
+    },
+    {
+     "nome": "Categoria 2",
+     "campea": "Equipe Vórtice",
+     "escola": "Escola 24"
+    },
+    {
+     "nome": "Categoria 3",
+     "campea": "Equipe Pixel",
+     "escola": "Escola 27"
+    },
+    {
+     "nome": "Categoria 4",
+     "campea": "Equipe Faísca",
+     "escola": "Escola 30"
+    },
+    {
+     "nome": "Categoria 5",
+     "campea": "Equipe Engrenagem",
+     "escola": "Escola 33"
+    },
+    {
+     "nome": "Categoria 6",
+     "campea": "Equipe Pulso",
+     "escola": "Escola 01"
+    },
+    {
+     "nome": "Categoria 7",
+     "campea": "Equipe Órbita",
+     "escola": "Escola 04"
+    }
+   ],
+   "projetos": [
+    {
+     "titulo": "Robô sumô com estratégia adaptativa",
+     "equipe": "Equipe Circuito"
+    },
+    {
+     "titulo": "Carrinho autônomo com desvio de obstáculos",
+     "equipe": "Equipe Vórtice"
+    }
+   ],
+   "fonte": {
+    "origem": "Acervo interno da Secretaria de Educação (dado fictício de demonstração)",
+    "validado_por": "Comunicação da Secretaria (exemplo)",
+    "validado_em": "2026-11-10"
+   },
+   "historico_correcoes": [
+    {
+     "data": "2026-11-10",
+     "descricao": "Número de equipes corrigido de 51 para 52 após conferência com a fonte oficial.",
+     "por": "Comunicação da Secretaria (exemplo)"
+    }
+   ]
+  },
+  {
+   "id": "joinville-robotica-2026",
+   "ano": 2026,
+   "edicao": "6ª Edição",
+   "status": "publicado",
+   "ficticio": true,
+   "escolas": 35,
+   "equipes": 69,
+   "estudantes": 250,
+   "resumo": "Edição recorde, com 69 equipes de 35 escolas e mais de 250 estudantes.",
+   "categorias": [
+    {
+     "nome": "Categoria 1",
+     "campea": "Equipe Vórtice",
+     "escola": "Escola 26"
+    },
+    {
+     "nome": "Categoria 2",
+     "campea": "Equipe Pixel",
+     "escola": "Escola 29"
+    },
+    {
+     "nome": "Categoria 3",
+     "campea": "Equipe Faísca",
+     "escola": "Escola 32"
+    },
+    {
+     "nome": "Categoria 4",
+     "campea": "Equipe Engrenagem",
+     "escola": "Escola 35"
+    },
+    {
+     "nome": "Categoria 5",
+     "campea": "Equipe Pulso",
+     "escola": "Escola 03"
+    },
+    {
+     "nome": "Categoria 6",
+     "campea": "Equipe Órbita",
+     "escola": "Escola 06"
+    },
+    {
+     "nome": "Categoria 7",
+     "campea": "Equipe Circuito",
+     "escola": "Escola 09"
+    }
+   ],
+   "projetos": [
+    {
+     "titulo": "Carrinho autônomo com desvio de obstáculos",
+     "equipe": "Equipe Vórtice"
+    },
+    {
+     "titulo": "Robô seguidor de linha com sensores duplos",
+     "equipe": "Equipe Pixel"
+    }
+   ],
+   "fonte": {
+    "origem": "Acervo interno da Secretaria de Educação (dado fictício de demonstração)",
+    "validado_por": "Comunicação da Secretaria (exemplo)",
+    "validado_em": "2026-11-10"
+   },
+   "historico_correcoes": [],
+   "nota": "Totais conforme o briefing oficial do Hackathon; vencedores e projetos são fictícios."
+  }
+ ]
+}

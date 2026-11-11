@@ -1,0 +1,792 @@
+/* ==========================================================================
+   Acervo do Campeonato Joinvilense de Robótica
+   Layout inspirado nas páginas de notícia de joinville.sc.gov.br:
+   cabeçalho claro com logo azul, trilha de navegação, título + "Relacionado a",
+   conteúdo em coluna, rodapé claro e barra de acessibilidade.
+
+   IMPORTANTE: não foi possível ler o CSS do site oficial. As cores e fontes
+   abaixo são valores de referência. Para igualar à identidade oficial, abra
+   o site, use F12 > Inspecionar e copie os valores reais para o bloco :root.
+
+   Tudo usa o prefixo .acervo- e variáveis --ac-*, para não colidir com o tema
+   WordPress da prefeitura. Não há reset global.
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. Variáveis (ajuste aqui)
+   -------------------------------------------------------------------------- */
+:root {
+  --ac-primary: #0056b3;
+  --ac-dark: #0a2540;
+  --ac-accent: #0088ff;
+  --ac-bg: #ffffff;
+  --ac-bg-suave: #f4f7f9;
+  --ac-card: #ffffff;
+  --ac-text: #1f2933;
+  --ac-muted: #52606d;
+  --ac-border: #e0e6ed;
+  --ac-radius: 10px;
+  --ac-fonte: "Segoe UI", Roboto, Arial, sans-serif;
+}
+
+
+.acervo-body {
+  margin: 0;
+  background: var(--ac-bg);
+  color: var(--ac-text);
+  font-family: var(--ac-fonte);
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.acervo-body *,
+.acervo-body *::before,
+.acervo-body *::after {
+  box-sizing: border-box;
+}
+
+.acervo-body a {
+  color: var(--ac-primary);
+}
+
+.acervo-body :focus-visible {
+  outline: 3px solid var(--ac-dark);
+  outline-offset: 3px;
+}
+
+.acervo-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.acervo-sr {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+.acervo-skip {
+  position: absolute;
+  left: -999px;
+  top: 0;
+  z-index: 2000;
+  padding: 0.5rem 1rem;
+  background: #ffffff;
+}
+
+.acervo-skip:focus {
+  left: 8px;
+  top: 8px;
+}
+
+/* --------------------------------------------------------------------------
+   3. Barra de acessibilidade
+   -------------------------------------------------------------------------- */
+.acervo-a11y {
+  background: var(--ac-bg-suave);
+  border-bottom: 1px solid var(--ac-border);
+  font-size: 0.85rem;
+}
+
+.acervo-a11y__conteudo {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 14px;
+  justify-content: flex-end;
+  align-items: center;
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+.acervo-a11y button {
+  border: 0;
+  background: none;
+  padding: 4px 2px;
+  font: inherit;
+  color: var(--ac-primary);
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.acervo-a11y button[aria-pressed="true"] {
+  font-weight: 700;
+}
+
+/* --------------------------------------------------------------------------
+   4. Cabeçalho e trilha de navegação
+   -------------------------------------------------------------------------- */
+.acervo-cabecalho {
+  background: var(--ac-card);
+  border-bottom: 1px solid var(--ac-border);
+}
+
+.acervo-cabecalho__conteudo {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 14px;
+  padding-bottom: 14px;
+}
+
+.acervo-cabecalho__logo img {
+  display: block;
+  height: 48px;
+  width: auto;
+}
+
+.acervo-cabecalho__links {
+  display: flex;
+  gap: 18px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-weight: 600;
+}
+
+.acervo-cabecalho__links a {
+  text-decoration: none;
+}
+
+.acervo-cabecalho__links a:hover {
+  text-decoration: underline;
+}
+
+.acervo-trilha {
+  background: var(--ac-bg-suave);
+  border-top: 1px solid var(--ac-border);
+  font-size: 0.9rem;
+}
+
+.acervo-trilha ol {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 8px;
+  margin: 0;
+  padding: 8px 20px;
+  list-style: none;
+}
+
+.acervo-trilha li + li::before {
+  content: "›";
+  margin-right: 8px;
+  color: var(--ac-muted);
+}
+
+/* --------------------------------------------------------------------------
+   5. Título da página e blocos de conteúdo
+   -------------------------------------------------------------------------- */
+.acervo-pagina-cab {
+  padding-top: 28px;
+}
+
+.acervo-pagina-titulo {
+  margin: 0 0 6px;
+  font-size: 1.9rem;
+  line-height: 1.25;
+  color: var(--ac-dark);
+}
+
+.acervo-pagina-meta {
+  margin: 0 0 8px;
+  font-size: 0.9rem;
+  color: var(--ac-muted);
+}
+
+.acervo-card {
+  margin: 24px 0;
+  padding: 22px;
+  background: var(--ac-card);
+  border: 1px solid var(--ac-border);
+  border-radius: var(--ac-radius);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.acervo-card h2,
+.acervo-card h3 {
+  margin-top: 0;
+  color: var(--ac-dark);
+}
+
+.acervo-titulo {
+  margin: 32px 0 4px;
+  font-size: 1.5rem;
+  color: var(--ac-dark);
+}
+
+.acervo-desc {
+  margin: 0 0 20px;
+  color: var(--ac-muted);
+}
+
+.acervo-aviso {
+  margin: 20px 0;
+  padding: 10px 14px;
+  background: #fff8e1;
+  border: 1px solid #f0d58a;
+  border-radius: var(--ac-radius);
+  color: #5c4400;
+  font-size: 0.9rem;
+}
+
+.acervo-migalhas {
+  margin-top: 20px;
+  font-size: 0.9rem;
+  color: var(--ac-muted);
+}
+
+/* --------------------------------------------------------------------------
+   6. Linha do tempo (horizontal, em zigue-zague)
+   -------------------------------------------------------------------------- */
+.acervo-linha {
+  overflow-x: auto;
+  padding: 8px 0;
+  scrollbar-width: thin;
+}
+
+.acervo-linha ol {
+  position: relative;
+  display: flex;
+  width: max-content;
+  min-width: 100%;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.acervo-linha ol::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  height: 4px;
+  background: var(--ac-primary);
+  border-radius: 2px;
+}
+
+.acervo-no {
+  --off: 46px;
+  position: relative;
+  flex: 1 1 190px;
+  min-width: 190px;
+  height: 250px;
+}
+
+.acervo-no--foto {
+  --off: 66px;
+}
+
+.acervo-no__botao {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 68px;
+  height: 68px;
+  border: 4px solid #ffffff;
+  border-radius: 50%;
+  background: var(--ac-primary);
+  color: #ffffff;
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s, background-color 0.2s;
+}
+
+.acervo-no__botao:hover,
+.acervo-no__botao[aria-expanded="true"] {
+  transform: translate(-50%, -50%) scale(1.12);
+  background: var(--ac-accent);
+}
+
+.acervo-no__rotulo {
+  position: absolute;
+  left: 0;
+  right: 0;
+  text-align: center;
+  font-weight: 600;
+  line-height: 1.3;
+  color: var(--ac-dark);
+}
+
+.acervo-no__rotulo small {
+  display: block;
+  font-weight: 400;
+  color: var(--ac-muted);
+}
+
+.acervo-no.acima .acervo-no__rotulo {
+  bottom: calc(50% + var(--off));
+}
+
+.acervo-no.abaixo .acervo-no__rotulo {
+  top: calc(50% + var(--off));
+}
+
+.acervo-acesso {
+  margin: 8px 0 0;
+  color: var(--ac-muted);
+}
+
+.acervo-acesso a {
+  margin-left: 10px;
+  font-weight: 600;
+}
+
+/* Cartão com foto */
+.acervo-no__botao--foto {
+  width: 128px;
+  height: 88px;
+  padding: 0;
+  overflow: hidden;
+  border-radius: 14px;
+  background: var(--ac-dark);
+}
+
+.acervo-no__botao--foto img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.acervo-no__ano {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 2px 0;
+  background: rgba(10, 37, 64, 0.85);
+  color: #ffffff;
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+/* --------------------------------------------------------------------------
+   7. Pop-up da edição (posicionado por JS; no celular vira painel inferior)
+   -------------------------------------------------------------------------- */
+.acervo-popup {
+  position: fixed;
+  z-index: 1000;
+  width: 310px;
+  max-width: calc(100vw - 16px);
+  padding: 16px 40px 16px 16px;
+  background: var(--ac-card);
+  color: var(--ac-text);
+  border: 1px solid var(--ac-border);
+  border-radius: var(--ac-radius);
+  box-shadow: 0 8px 28px rgba(10, 37, 64, 0.25);
+  font-size: 0.92rem;
+}
+
+.acervo-popup[hidden] {
+  display: none;
+}
+
+.acervo-popup__foto {
+  display: block;
+  width: calc(100% + 56px);
+  height: 120px;
+  margin: -16px -40px 10px -16px;
+  object-fit: cover;
+  border-radius: var(--ac-radius) var(--ac-radius) 0 0;
+}
+
+.acervo-popup__titulo {
+  margin: 0 0 6px;
+  font-size: 1.05rem;
+  color: var(--ac-primary);
+}
+
+.acervo-popup__resumo {
+  margin: 0 0 8px;
+}
+
+.acervo-popup__numeros {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin: 0 0 8px;
+  padding: 0;
+  list-style: none;
+}
+
+.acervo-popup__destaques {
+  margin: 0 0 10px;
+  padding-left: 18px;
+}
+
+.acervo-popup__link {
+  font-weight: 600;
+}
+
+.acervo-popup__fechar {
+  position: absolute;
+  top: 6px;
+  right: 8px;
+  width: 28px;
+  height: 28px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.85);
+  color: var(--ac-muted);
+  font-size: 1.5rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+/* --------------------------------------------------------------------------
+   8. Indicadores e gráfico de barras
+   -------------------------------------------------------------------------- */
+.acervo-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 16px;
+  margin: 16px 0;
+}
+
+.acervo-stat {
+  padding: 18px;
+  background: var(--ac-card);
+  border-top: 4px solid var(--ac-primary);
+  border-radius: var(--ac-radius);
+  text-align: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.acervo-stat strong {
+  display: block;
+  font-size: 2rem;
+  color: var(--ac-primary);
+}
+
+.acervo-stat span {
+  font-size: 0.9rem;
+  color: var(--ac-muted);
+}
+
+.acervo-barras {
+  display: grid;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.acervo-barras li {
+  display: grid;
+  grid-template-columns: 3.5rem 1fr 2.5rem;
+  gap: 12px;
+  align-items: center;
+}
+
+.acervo-barras .trilho {
+  height: 14px;
+  overflow: hidden;
+  background: var(--ac-border);
+  border-radius: 99px;
+}
+
+.acervo-barras i {
+  display: block;
+  width: var(--v);
+  height: 100%;
+  background: var(--ac-primary);
+}
+
+/* --------------------------------------------------------------------------
+   9. Fluxo editorial
+   -------------------------------------------------------------------------- */
+.acervo-fluxo {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 14px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  counter-reset: passo;
+}
+
+.acervo-fluxo li {
+  position: relative;
+  padding: 14px;
+  border: 1px solid var(--ac-border);
+  border-radius: var(--ac-radius);
+  counter-increment: passo;
+}
+
+.acervo-fluxo li::before {
+  content: counter(passo);
+  display: inline-grid;
+  place-items: center;
+  width: 26px;
+  height: 26px;
+  margin-bottom: 6px;
+  border-radius: 50%;
+  background: var(--ac-primary);
+  color: #ffffff;
+  font-weight: 700;
+}
+
+.acervo-fluxo strong,
+.acervo-fluxo span {
+  display: block;
+}
+
+.acervo-fluxo span {
+  font-size: 0.9rem;
+  color: var(--ac-muted);
+}
+
+/* --------------------------------------------------------------------------
+   10. Página da edição
+   -------------------------------------------------------------------------- */
+.acervo-foto {
+  margin: 16px 0;
+}
+
+.acervo-foto img {
+  display: block;
+  width: 100%;
+  max-height: 360px;
+  object-fit: cover;
+  border: 1px solid var(--ac-border);
+  border-radius: var(--ac-radius);
+}
+
+.acervo-foto figcaption {
+  margin-top: 6px;
+  font-size: 0.85rem;
+  color: var(--ac-muted);
+}
+
+.acervo-cats {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 16px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.acervo-cats .acervo-card {
+  position: relative;
+  margin: 0;
+}
+
+.acervo-cats__n {
+  position: absolute;
+  top: 12px;
+  right: 14px;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--ac-border);
+}
+
+.acervo-cats p {
+  margin: 0;
+}
+
+.acervo-fonte dl {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: 4px 16px;
+  margin: 0;
+}
+
+.acervo-fonte dt {
+  font-weight: 600;
+}
+
+.acervo-fonte dd {
+  margin: 0;
+}
+
+.acervo-compartilhe ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 18px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-weight: 600;
+}
+
+.acervo-pager {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  margin: 32px 0 0;
+  font-weight: 600;
+}
+
+/* --------------------------------------------------------------------------
+   11. Rodapé
+   -------------------------------------------------------------------------- */
+.acervo-topo {
+  display: block;
+  margin: 32px 0 0;
+  text-align: center;
+  font-weight: 600;
+}
+
+.acervo-rodape {
+  margin-top: 24px;
+  padding: 28px 0 20px;
+  background: var(--ac-bg-suave);
+  border-top: 1px solid var(--ac-border);
+  font-size: 0.9rem;
+  color: var(--ac-muted);
+}
+
+.acervo-rodape img {
+  display: block;
+  height: 44px;
+  width: auto;
+  margin-bottom: 10px;
+}
+
+.acervo-rodape p {
+  margin: 0 0 6px;
+}
+
+.acervo-rodape ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 18px;
+  margin: 14px 0;
+  padding: 0;
+  list-style: none;
+}
+
+.acervo-rodape small {
+  display: block;
+  margin-top: 10px;
+}
+
+/* --------------------------------------------------------------------------
+   12. Modo embed (iframe no site da prefeitura)
+   -------------------------------------------------------------------------- */
+.acervo-embed {
+  background: transparent;
+}
+
+/* --------------------------------------------------------------------------
+   13. Alto contraste (botão da barra de acessibilidade)
+   -------------------------------------------------------------------------- */
+.acervo-alto-contraste {
+  --ac-bg: #000000;
+  --ac-bg-suave: #000000;
+  --ac-card: #000000;
+  --ac-text: #ffffff;
+  --ac-muted: #ffffff;
+  --ac-border: #ffffff;
+  --ac-primary: #ffeb3b;
+  --ac-dark: #ffffff;
+  --ac-accent: #ffeb3b;
+}
+
+.acervo-alto-contraste .acervo-no__botao,
+.acervo-alto-contraste .acervo-fluxo li::before {
+  color: #000000;
+}
+
+.acervo-alto-contraste .acervo-aviso {
+  background: #000000;
+  border-color: #ffeb3b;
+  color: #ffeb3b;
+}
+
+.acervo-alto-contraste .acervo-popup__fechar {
+  background: #000000;
+  color: #ffffff;
+  border: 1px solid #ffffff;
+}
+
+/* --------------------------------------------------------------------------
+   14. Celular: linha do tempo vertical
+   -------------------------------------------------------------------------- */
+@media (max-width: 720px) {
+  .acervo-pagina-titulo {
+    font-size: 1.5rem;
+  }
+
+  .acervo-linha {
+    overflow: visible;
+  }
+
+  .acervo-linha ol {
+    flex-direction: column;
+    width: auto;
+  }
+
+  .acervo-linha ol::before {
+    left: 52px;
+    right: auto;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    height: auto;
+  }
+
+  .acervo-no {
+    --off: 0px;
+    display: flex;
+    flex: none;
+    align-items: center;
+    gap: 16px;
+    min-width: 0;
+    height: auto;
+    padding: 12px 0;
+  }
+
+  .acervo-no__botao,
+  .acervo-no__rotulo {
+    position: static;
+    transform: none;
+  }
+
+  .acervo-no__botao {
+    flex: none;
+    margin-left: 18px;
+  }
+
+  .acervo-no__botao--foto {
+    width: 104px;
+    height: 72px;
+    margin-left: 0;
+  }
+
+  .acervo-no__botao:hover,
+  .acervo-no__botao[aria-expanded="true"] {
+    transform: scale(1.08);
+  }
+
+  .acervo-no__rotulo {
+    text-align: left;
+  }
+
+  .acervo-popup {
+    left: 8px !important;
+    right: 8px;
+    top: auto !important;
+    bottom: 8px;
+    width: auto;
+    max-width: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .acervo-no__botao {
+    transition: none;
+  }
+}

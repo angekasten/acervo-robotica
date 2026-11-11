@@ -1,0 +1,6 @@
+Options -Indexes
+RewriteEngine On
+# Bloqueia acesso direto aos dados brutos e à camada interna
+RewriteRule ^(data|inc)/ - [F,L]
+# URLs amigáveis por edição: /2025  (depois, defina ACERVO_URL_AMIGAVEL = true em inc/dados.php)
+RewriteRule ^(20[0-9]{2})/?$ edicao.php?ano=$1 [L,QSA]
